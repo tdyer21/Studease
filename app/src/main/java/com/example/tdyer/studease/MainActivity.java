@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         Button courseOne = (Button) findViewById(R.id.course_one);
         Button courseTwo = (Button) findViewById(R.id.course_two);
         Button courseThree = (Button) findViewById(R.id.course_three);
+        Button appSettings = (Button) findViewById(R.id.app_settings);
 
 
 
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         courseOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sessionOne = new Intent(this, CourseOneActivity.class);
+                Intent sessionOne = new Intent(MainActivity.this, CourseOneActivity.class);
                 startActivity(sessionOne);
             }
         });
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         courseTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sessionTwo = new Intent(this, CourseTwoActivity.class);
+                Intent sessionTwo = new Intent(MainActivity.this, CourseTwoActivity.class);
                 startActivity(sessionTwo);
             }
         });
@@ -44,11 +45,19 @@ public class MainActivity extends AppCompatActivity {
         courseThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent sessionThree = new Intent(this, CourseThreeActivity.class);
+                Intent sessionThree = new Intent(MainActivity.this, CourseThreeActivity.class);
                 startActivity(sessionThree);
             }
         });
 
+        // Settings onClick
+        appSettings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent appSet = new Intent(MainActivity.this, SettingsActivity.class);
+                startActivity(appSet);
+            }
+        });
 
     }
 }
